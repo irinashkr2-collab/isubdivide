@@ -840,10 +840,521 @@
     }
 
   </style>
+
+<style>
+/* Reliable opening animation — CSS-first with JS fallback */
+.site-loader{
+  animation:siteLoaderExit .75s cubic-bezier(.4,0,.2,1) 1.65s forwards !important;
+}
+.site-loader .loader-inner{
+  animation:loaderInnerEvolve .85s cubic-bezier(.2,.8,.2,1) 1.05s forwards;
+}
+.site-loader .loader-logo{
+  transform-origin:center;
+}
+body > main{
+  opacity:0;
+  transform:scale(.985);
+  animation:pageEvolveIn 1.05s cubic-bezier(.2,.8,.2,1) 1.48s forwards;
+}
+
+@keyframes loaderInnerEvolve{
+  0%{
+    transform:scale(1);
+    filter:blur(0);
+    opacity:1;
+  }
+  55%{
+    transform:scale(1.18);
+    filter:blur(0);
+    opacity:1;
+  }
+  100%{
+    transform:scale(4.6);
+    filter:blur(12px);
+    opacity:0;
+  }
+}
+
+@keyframes siteLoaderExit{
+  0%{
+    opacity:1;
+    visibility:visible;
+    pointer-events:auto;
+  }
+  99%{
+    opacity:0;
+    visibility:visible;
+    pointer-events:none;
+  }
+  100%{
+    opacity:0;
+    visibility:hidden;
+    pointer-events:none;
+  }
+}
+
+@keyframes pageEvolveIn{
+  from{
+    opacity:0;
+    transform:scale(.985);
+    filter:blur(8px);
+  }
+  to{
+    opacity:1;
+    transform:scale(1);
+    filter:blur(0);
+  }
+}
+
+/* When JS adds this class, exit immediately and cleanly */
+.site-loader.is-hidden{
+  animation:none !important;
+  opacity:0 !important;
+  visibility:hidden !important;
+  pointer-events:none !important;
+}
+
+/* Keep the page visible if animations are disabled */
+@media (prefers-reduced-motion: reduce){
+  .site-loader{
+    display:none !important;
+  }
+  body > main{
+    opacity:1 !important;
+    transform:none !important;
+    filter:none !important;
+    animation:none !important;
+  }
+}
+</style>
+
+
+<style id="isubdivide-hard-overrides">
+/* =========================================================
+   ISUBDIVIDE HARD OVERRIDE LAYER
+   Prevent Elementor, WordPress themes and global styles
+   from changing this custom homepage.
+========================================================= */
+
+.isubdivide-homepage,
+.isubdivide-homepage *,
+.isubdivide-homepage *::before,
+.isubdivide-homepage *::after{
+  box-sizing:border-box !important;
+}
+
+.isubdivide-homepage{
+  --stone:#f3f1eb;
+  --charcoal:#171c24;
+  --charcoal-2:#202732;
+  --white:#ffffff;
+  --lime:#c8ff18;
+  --blue:#204f86;
+  --muted:#727987;
+  --line:rgba(23,28,36,.11);
+  --line-dark:rgba(255,255,255,.13);
+  --glass:rgba(255,255,255,.84);
+  --container:1240px;
+  --radius-lg:34px;
+  --radius-md:22px;
+  --shadow:0 30px 80px rgba(19,24,32,.12);
+
+  width:100% !important;
+  max-width:none !important;
+  margin:0 !important;
+  padding:0 !important;
+  overflow:hidden !important;
+  background:var(--stone) !important;
+  color:var(--charcoal) !important;
+  font-family:"Manrope",Arial,sans-serif !important;
+  font-size:16px !important;
+  font-weight:400 !important;
+  line-height:1.65 !important;
+  letter-spacing:normal !important;
+  text-transform:none !important;
+}
+
+.isubdivide-homepage main,
+.isubdivide-homepage section,
+.isubdivide-homepage article,
+.isubdivide-homepage div{
+  font-family:"Manrope",Arial,sans-serif !important;
+}
+
+.isubdivide-homepage p,
+.isubdivide-homepage li,
+.isubdivide-homepage blockquote,
+.isubdivide-homepage small{
+  font-family:"Manrope",Arial,sans-serif !important;
+  font-style:normal !important;
+  text-transform:none !important;
+}
+
+.isubdivide-homepage h1,
+.isubdivide-homepage h2,
+.isubdivide-homepage h3,
+.isubdivide-homepage h4,
+.isubdivide-homepage h5,
+.isubdivide-homepage h6{
+  font-family:"Manrope",Arial,sans-serif !important;
+  font-style:normal !important;
+  font-weight:500 !important;
+  text-transform:none !important;
+  text-decoration:none !important;
+}
+
+.isubdivide-homepage a,
+.isubdivide-homepage a:visited,
+.isubdivide-homepage a:hover,
+.isubdivide-homepage a:focus{
+  font-family:"Manrope",Arial,sans-serif !important;
+  text-decoration:none !important;
+  box-shadow:none !important;
+}
+
+.isubdivide-homepage button,
+.isubdivide-homepage input,
+.isubdivide-homepage textarea,
+.isubdivide-homepage select{
+  font-family:"Manrope",Arial,sans-serif !important;
+}
+
+/* Restore correct light-section text */
+.isubdivide-homepage .hero,
+.isubdivide-homepage .proof-strip,
+.isubdivide-homepage .process,
+.isubdivide-homepage .featured-projects,
+.isubdivide-homepage .case-studies,
+.isubdivide-homepage .reviews,
+.isubdivide-homepage .testimonial{
+  color:var(--charcoal) !important;
+}
+
+.isubdivide-homepage .hero h1,
+.isubdivide-homepage .hero h2,
+.isubdivide-homepage .hero h3,
+.isubdivide-homepage .process h1,
+.isubdivide-homepage .process h2,
+.isubdivide-homepage .process h3,
+.isubdivide-homepage .featured-projects h1,
+.isubdivide-homepage .featured-projects h2,
+.isubdivide-homepage .featured-projects h3,
+.isubdivide-homepage .case-studies h1,
+.isubdivide-homepage .case-studies h2,
+.isubdivide-homepage .case-studies h3,
+.isubdivide-homepage .reviews h1,
+.isubdivide-homepage .reviews h2,
+.isubdivide-homepage .reviews h3,
+.isubdivide-homepage .testimonial h1,
+.isubdivide-homepage .testimonial h2,
+.isubdivide-homepage .testimonial h3{
+  color:var(--charcoal) !important;
+}
+
+.isubdivide-homepage .lead,
+.isubdivide-homepage .hero .lead,
+.isubdivide-homepage .process .lead,
+.isubdivide-homepage .featured-projects .lead,
+.isubdivide-homepage .case-studies .lead,
+.isubdivide-homepage .reviews .lead,
+.isubdivide-homepage .testimonial .lead{
+  color:var(--muted) !important;
+}
+
+/* Restore correct dark-section text */
+.isubdivide-homepage .assessment,
+.isubdivide-homepage .pathways,
+.isubdivide-homepage .team,
+.isubdivide-homepage .final{
+  color:#ffffff !important;
+}
+
+.isubdivide-homepage .assessment h1,
+.isubdivide-homepage .assessment h2,
+.isubdivide-homepage .assessment h3,
+.isubdivide-homepage .assessment h4,
+.isubdivide-homepage .pathways h1,
+.isubdivide-homepage .pathways h2,
+.isubdivide-homepage .pathways h3,
+.isubdivide-homepage .pathways h4,
+.isubdivide-homepage .team h1,
+.isubdivide-homepage .team h2,
+.isubdivide-homepage .team h3,
+.isubdivide-homepage .team h4,
+.isubdivide-homepage .final h1,
+.isubdivide-homepage .final h2,
+.isubdivide-homepage .final h3,
+.isubdivide-homepage .final h4{
+  color:#ffffff !important;
+}
+
+.isubdivide-homepage .assessment p,
+.isubdivide-homepage .assessment .lead,
+.isubdivide-homepage .pathways p,
+.isubdivide-homepage .pathways .lead,
+.isubdivide-homepage .team p,
+.isubdivide-homepage .team .lead,
+.isubdivide-homepage .final p,
+.isubdivide-homepage .final .lead{
+  color:rgba(255,255,255,.72) !important;
+}
+
+/* Components that intentionally use dark text inside dark sections */
+.isubdivide-homepage .assessment-product,
+.isubdivide-homepage .assessment-product *,
+.isubdivide-homepage .pathway-card.lime,
+.isubdivide-homepage .pathway-card.lime *,
+.isubdivide-homepage .pathway-card.stone,
+.isubdivide-homepage .pathway-card.stone *,
+.isubdivide-homepage .image-caption,
+.isubdivide-homepage .image-caption *,
+.isubdivide-homepage .project-glass,
+.isubdivide-homepage .project-glass *,
+.isubdivide-homepage .glass-card,
+.isubdivide-homepage .glass-card *{
+  color:var(--charcoal) !important;
+}
+
+.isubdivide-homepage .assessment-product p,
+.isubdivide-homepage .image-caption span,
+.isubdivide-homepage .project-glass p,
+.isubdivide-homepage .glass-card span{
+  color:var(--muted) !important;
+}
+
+/* Components that intentionally remain white */
+.isubdivide-homepage .assessment-option,
+.isubdivide-homepage .assessment-option *,
+.isubdivide-homepage .pathway-card.blue,
+.isubdivide-homepage .pathway-card.blue *,
+.isubdivide-homepage .pathway-card.dark,
+.isubdivide-homepage .pathway-card.dark *,
+.isubdivide-homepage .case-card,
+.isubdivide-homepage .case-card *,
+.isubdivide-homepage .project-showcase,
+.isubdivide-homepage .project-showcase *{
+  color:#ffffff !important;
+}
+
+.isubdivide-homepage .assessment-option p,
+.isubdivide-homepage .pathway-card.blue p,
+.isubdivide-homepage .pathway-card.dark p,
+.isubdivide-homepage .case-card p{
+  color:rgba(255,255,255,.72) !important;
+}
+
+/* Eyebrows */
+.isubdivide-homepage .eyebrow{
+  color:var(--blue) !important;
+}
+
+.isubdivide-homepage .assessment .eyebrow,
+.isubdivide-homepage .pathways .eyebrow,
+.isubdivide-homepage .team .eyebrow,
+.isubdivide-homepage .final .eyebrow{
+  color:#ffffff !important;
+}
+
+/* Accent text */
+.isubdivide-homepage .hero h1 span,
+.isubdivide-homepage .assessment-option .price,
+.isubdivide-homepage .assessment-option a,
+.isubdivide-homepage .person span{
+  color:var(--lime) !important;
+}
+
+.isubdivide-homepage .hero h1 span{
+  color:var(--blue) !important;
+}
+
+/* Buttons */
+.isubdivide-homepage .btn,
+.isubdivide-homepage .btn:visited,
+.isubdivide-homepage .btn:hover,
+.isubdivide-homepage .btn:focus{
+  border-radius:999px !important;
+  font-weight:700 !important;
+  line-height:1 !important;
+  text-decoration:none !important;
+}
+
+.isubdivide-homepage .btn-primary,
+.isubdivide-homepage .btn-primary:visited{
+  background:var(--lime) !important;
+  color:var(--charcoal) !important;
+}
+
+.isubdivide-homepage .btn-dark,
+.isubdivide-homepage .btn-dark:visited{
+  background:var(--charcoal) !important;
+  color:#ffffff !important;
+}
+
+.isubdivide-homepage .btn-light,
+.isubdivide-homepage .btn-light:visited{
+  background:#ffffff !important;
+  color:var(--charcoal) !important;
+}
+
+.isubdivide-homepage .btn-outline-light,
+.isubdivide-homepage .btn-outline-light:visited{
+  background:transparent !important;
+  color:#ffffff !important;
+  border-color:rgba(255,255,255,.34) !important;
+}
+
+/* Reviews */
+.isubdivide-homepage .review-card,
+.isubdivide-homepage .review-card *{
+  color:var(--charcoal) !important;
+}
+.isubdivide-homepage .review-card .review-author{
+  color:var(--muted) !important;
+}
+.isubdivide-homepage .review-card .review-stars{
+  color:var(--blue) !important;
+}
+
+/* Loader */
+.isubdivide-homepage .site-loader{
+  color:var(--charcoal) !important;
+}
+.isubdivide-homepage .loader-word{
+  color:var(--blue) !important;
+}
+
+/* Prevent Elementor theme wrappers from adding spacing */
+.elementor .isubdivide-homepage,
+.elementor-widget-html .isubdivide-homepage,
+.entry-content .isubdivide-homepage,
+.site-main .isubdivide-homepage{
+  width:100% !important;
+  max-width:none !important;
+  margin:0 !important;
+  padding:0 !important;
+}
+
+/* Prevent WordPress from styling images */
+.isubdivide-homepage img{
+  max-width:100% !important;
+  height:auto !important;
+  border:0 !important;
+  border-radius:inherit;
+  box-shadow:none;
+}
+
+/* Prevent global list rules */
+.isubdivide-homepage ul,
+.isubdivide-homepage ol{
+  margin:0 !important;
+  padding:0 !important;
+  list-style:none !important;
+}
+
+/* Preserve responsive behaviour */
+@media(max-width:720px){
+  .isubdivide-homepage{
+    font-size:16px !important;
+  }
+}
+</style>
+
+
+<style id="isubdivide-option-b-capabilities">
+.isubdivide-homepage .btn-quiet,
+.isubdivide-homepage .btn-quiet:visited{
+  background:transparent !important;
+  color:var(--charcoal) !important;
+  border:1px solid rgba(23,28,36,.22) !important;
+}
+.isubdivide-homepage .btn-quiet:hover,
+.isubdivide-homepage .btn-quiet:focus{
+  background:#ffffff !important;
+  color:var(--charcoal) !important;
+  transform:translateY(-3px) !important;
+}
+
+.isubdivide-homepage .logo-marquee{
+  background:#ffffff !important;
+  border-top:1px solid var(--line) !important;
+  border-bottom:1px solid var(--line) !important;
+  padding:24px 0 28px !important;
+  overflow:hidden !important;
+}
+.isubdivide-homepage .logo-marquee-label{
+  padding:0 20px 18px !important;
+  text-align:center !important;
+  color:var(--muted) !important;
+  font-size:.7rem !important;
+  font-weight:700 !important;
+  letter-spacing:.16em !important;
+  text-transform:uppercase !important;
+}
+.isubdivide-homepage .logo-marquee-window{
+  width:100% !important;
+  overflow:hidden !important;
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent) !important;
+  mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent) !important;
+}
+.isubdivide-homepage .logo-marquee-track{
+  display:flex !important;
+  align-items:center !important;
+  gap:34px !important;
+  width:max-content !important;
+  animation:isubLogoRun 32s linear infinite !important;
+}
+.isubdivide-homepage .logo-marquee-track:hover{
+  animation-play-state:paused !important;
+}
+.isubdivide-homepage .marquee-logo{
+  width:190px !important;
+  height:74px !important;
+  flex:0 0 auto !important;
+  display:grid !important;
+  place-items:center !important;
+  padding:12px 18px !important;
+  border-radius:18px !important;
+  background:#f7f7f5 !important;
+  border:1px solid rgba(23,28,36,.08) !important;
+}
+.isubdivide-homepage .marquee-logo img{
+  width:100% !important;
+  height:100% !important;
+  object-fit:contain !important;
+  filter:grayscale(1) contrast(.82) !important;
+  opacity:.72 !important;
+  transition:filter .25s ease, opacity .25s ease, transform .25s ease !important;
+}
+.isubdivide-homepage .marquee-logo:hover img{
+  filter:grayscale(0) contrast(1) !important;
+  opacity:1 !important;
+  transform:scale(1.04) !important;
+}
+@keyframes isubLogoRun{
+  to{transform:translateX(calc(-50% - 17px))}
+}
+
+@media(max-width:720px){
+  .isubdivide-homepage .hero .button-row{
+    display:grid !important;
+    grid-template-columns:1fr !important;
+  }
+  .isubdivide-homepage .hero .btn{
+    width:100% !important;
+  }
+  .isubdivide-homepage .marquee-logo{
+    width:150px !important;
+    height:64px !important;
+  }
+}
+</style>
+
 </head>
 
 <body>
 
+<div class="isubdivide-homepage">
 <div class="site-loader" id="siteLoader" aria-hidden="true">
   <div class="loader-inner">
     <div class="loader-logo" aria-label="iSubdivide loading">
@@ -872,7 +1383,8 @@
 
         <div class="button-row">
           <a class="btn btn-primary" href="https://isubdivide.com.au/site-assessment/">Start a Site Assessment</a>
-          <a class="btn btn-dark" href="tel:1300901851">Book a Free Consultation</a>
+          <a class="btn btn-dark" href="#pathways">Show Me My Options</a>
+          <a class="btn btn-quiet" href="tel:1300901851">Book a Free Consultation</a>
         </div>
       </div>
 
@@ -900,6 +1412,27 @@
       <div class="proof-item"><strong>Property pathways</strong><span>From assessment to delivery</span></div>
       <div class="proof-item"><strong>Construction experience</strong><span>More than 20 years</span></div>
       <div class="proof-item"><strong>One experienced team</strong><span>Planning, design and build</span></div>
+    </div>
+  </section>
+
+  <section class="logo-marquee" aria-label="Featured in and industry associations">
+    <div class="logo-marquee-label">As featured in and connected across property</div>
+    <div class="logo-marquee-window">
+      <div class="logo-marquee-track">
+        <div class="marquee-logo"><img src="https://isubdivide.com.au/wp-content/uploads/2025/04/1-3.png" alt="Featured property brand"></div>
+        <div class="marquee-logo"><img src="https://isubdivide.com.au/wp-content/uploads/2025/04/2-3.png" alt="Featured property brand"></div>
+        <div class="marquee-logo"><img src="https://isubdivide.com.au/wp-content/uploads/2025/04/3-3.png" alt="Featured property brand"></div>
+        <div class="marquee-logo"><img src="https://isubdivide.com.au/wp-content/uploads/2025/05/realestate-1.png" alt="realestate.com.au"></div>
+        <div class="marquee-logo"><img src="https://isubdivide.com.au/wp-content/uploads/2025/05/IMG_1604-2-2-1-e1748562724214.png" alt="Featured media logo"></div>
+        <div class="marquee-logo"><img src="https://isubdivide.com.au/wp-content/uploads/2025/05/503-5033718_featured-in-sydney-morning-herald-transparent-logo-hd-removebg-preview.png" alt="Sydney Morning Herald"></div>
+
+        <div class="marquee-logo" aria-hidden="true"><img src="https://isubdivide.com.au/wp-content/uploads/2025/04/1-3.png" alt=""></div>
+        <div class="marquee-logo" aria-hidden="true"><img src="https://isubdivide.com.au/wp-content/uploads/2025/04/2-3.png" alt=""></div>
+        <div class="marquee-logo" aria-hidden="true"><img src="https://isubdivide.com.au/wp-content/uploads/2025/04/3-3.png" alt=""></div>
+        <div class="marquee-logo" aria-hidden="true"><img src="https://isubdivide.com.au/wp-content/uploads/2025/05/realestate-1.png" alt=""></div>
+        <div class="marquee-logo" aria-hidden="true"><img src="https://isubdivide.com.au/wp-content/uploads/2025/05/IMG_1604-2-2-1-e1748562724214.png" alt=""></div>
+        <div class="marquee-logo" aria-hidden="true"><img src="https://isubdivide.com.au/wp-content/uploads/2025/05/503-5033718_featured-in-sydney-morning-herald-transparent-logo-hd-removebg-preview.png" alt=""></div>
+      </div>
     </div>
   </section>
 
@@ -947,7 +1480,7 @@
     </div>
   </section>
 
-  <section class="pathways section">
+  <section class="pathways section" id="pathways">
     <div class="container">
       <span class="eyebrow" style="color:white;display:flex;justify-content:center">One block can hold more than one possibility</span>
       <h2>What do you want your property to do?</h2>
@@ -1092,21 +1625,21 @@
       <div class="featured-grid">
         <div class="featured-large">
           <div class="image-caption">
-            <strong>Townhouse development</strong>
-            <span>Site strategy, planning and project delivery.</span>
+            <strong>Townhouse Development</strong>
+            <span>From site strategy and planning through to project delivery.</span>
           </div>
         </div>
         <div class="featured-stack">
           <div class="featured-stack-item one">
             <div class="image-caption">
-              <strong>Residential transformation</strong>
-              <span>Design-led property improvement.</span>
+              <strong>Granny Flats</strong>
+              <span>Create flexible space for family, income or future living.</span>
             </div>
           </div>
           <div class="featured-stack-item two">
             <div class="image-caption">
-              <strong>Multi-dwelling potential</strong>
-              <span>Exploring the best use of the block.</span>
+              <strong>Subdivision</strong>
+              <span>Understand whether your land can be divided and developed.</span>
             </div>
           </div>
         </div>
@@ -1222,11 +1755,24 @@
 </main>
 
 <script>
+(function () {
+  function hideLoader() {
+    var loader = document.getElementById("siteLoader");
+    if (loader) loader.classList.add("is-hidden");
+  }
+
+  /* CSS performs the visible animation. JS is only a safety fallback. */
   window.addEventListener("load", function () {
-    window.setTimeout(function () {
-      document.getElementById("siteLoader")?.classList.add("is-hidden");
-    }, 1450);
+    window.setTimeout(hideLoader, 2500);
   });
+
+  document.addEventListener("DOMContentLoaded", function () {
+    window.setTimeout(hideLoader, 2800);
+  });
+
+  /* Never allow the overlay to remain stuck. */
+  window.setTimeout(hideLoader, 3500);
+})();
 </script>
 
 </body>
