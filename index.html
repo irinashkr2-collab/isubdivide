@@ -1350,6 +1350,191 @@ body > main{
 }
 </style>
 
+
+<style id="isubdivide-option-b-final-fixes">
+/* Smaller hero title */
+.isubdivide-homepage .hero h1{
+  font-size:clamp(3rem,5.4vw,5.15rem) !important;
+  max-width:700px !important;
+  line-height:1.01 !important;
+}
+
+/* Hero options menu */
+.isubdivide-homepage .hero-options-panel{
+  margin-top:22px !important;
+  max-width:720px !important;
+  padding:18px !important;
+  border-radius:22px !important;
+  background:#ffffff !important;
+  border:1px solid rgba(23,28,36,.10) !important;
+  box-shadow:0 18px 44px rgba(23,28,36,.10) !important;
+}
+.isubdivide-homepage .hero-options-panel label{
+  display:block !important;
+  margin:0 0 10px !important;
+  color:var(--charcoal) !important;
+  font-size:.82rem !important;
+  font-weight:700 !important;
+  letter-spacing:.02em !important;
+}
+.isubdivide-homepage .hero-options-row{
+  display:grid !important;
+  grid-template-columns:minmax(0,1fr) auto !important;
+  gap:10px !important;
+}
+.isubdivide-homepage .hero-select-wrap{
+  position:relative !important;
+  min-width:0 !important;
+}
+.isubdivide-homepage .hero-select-wrap::after{
+  content:"⌄" !important;
+  position:absolute !important;
+  right:18px !important;
+  top:50% !important;
+  transform:translateY(-54%) !important;
+  pointer-events:none !important;
+  color:var(--charcoal) !important;
+  font-size:1.2rem !important;
+}
+.isubdivide-homepage .hero-options-panel select{
+  appearance:none !important;
+  -webkit-appearance:none !important;
+  width:100% !important;
+  min-height:58px !important;
+  padding:0 50px 0 18px !important;
+  border-radius:14px !important;
+  border:1px solid rgba(23,28,36,.17) !important;
+  background:#f6f7f8 !important;
+  color:var(--charcoal) !important;
+  font-size:.98rem !important;
+  font-weight:600 !important;
+  outline:none !important;
+  box-shadow:none !important;
+}
+.isubdivide-homepage .hero-options-panel select:focus{
+  border-color:var(--blue) !important;
+  box-shadow:0 0 0 4px rgba(32,79,134,.10) !important;
+}
+.isubdivide-homepage .hero-options-panel select option{
+  background:#ffffff !important;
+  color:var(--charcoal) !important;
+}
+.isubdivide-homepage .hero-options-button{
+  min-height:58px !important;
+  padding:0 24px !important;
+  border:0 !important;
+  border-radius:14px !important;
+  background:var(--charcoal) !important;
+  color:#ffffff !important;
+  font-size:.92rem !important;
+  font-weight:700 !important;
+  cursor:pointer !important;
+  transition:transform .25s ease, background .25s ease !important;
+}
+.isubdivide-homepage .hero-options-button:hover{
+  transform:translateY(-2px) !important;
+  background:var(--blue) !important;
+}
+
+/* Clean centred logo line */
+.isubdivide-homepage .logo-marquee{
+  padding:24px 0 30px !important;
+  background:#ffffff !important;
+}
+.isubdivide-homepage .logo-marquee-label{
+  margin-bottom:16px !important;
+  color:var(--muted) !important;
+}
+.isubdivide-homepage .logo-marquee-window{
+  overflow:hidden !important;
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent) !important;
+  mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent) !important;
+}
+.isubdivide-homepage .logo-marquee-track{
+  display:flex !important;
+  width:200vw !important;
+  gap:0 !important;
+  animation:isubLogoRunClean 42s linear infinite !important;
+}
+.isubdivide-homepage .logo-group{
+  width:100vw !important;
+  flex:0 0 100vw !important;
+  display:flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  gap:clamp(30px,4vw,72px) !important;
+  padding:0 5vw !important;
+}
+.isubdivide-homepage .logo-group img{
+  width:auto !important;
+  max-width:150px !important;
+  height:48px !important;
+  object-fit:contain !important;
+  filter:grayscale(1) contrast(.86) !important;
+  opacity:.67 !important;
+  border:0 !important;
+  background:transparent !important;
+  border-radius:0 !important;
+  padding:0 !important;
+  box-shadow:none !important;
+}
+@keyframes isubLogoRunClean{
+  from{transform:translateX(0)}
+  to{transform:translateX(-100vw)}
+}
+
+/* Prevent white-on-white text */
+.isubdivide-homepage .assessment-product,
+.isubdivide-homepage .assessment-product-top,
+.isubdivide-homepage .assessment-product-top *,
+.isubdivide-homepage .image-caption,
+.isubdivide-homepage .image-caption *,
+.isubdivide-homepage .review-card,
+.isubdivide-homepage .review-card *,
+.isubdivide-homepage .glass-card,
+.isubdivide-homepage .glass-card *{
+  color:var(--charcoal) !important;
+}
+.isubdivide-homepage .assessment-product-top p,
+.isubdivide-homepage .image-caption span,
+.isubdivide-homepage .review-author,
+.isubdivide-homepage .glass-card span{
+  color:var(--muted) !important;
+}
+.isubdivide-homepage .assessment-product-top .eyebrow{
+  color:var(--blue) !important;
+}
+.isubdivide-homepage .assessment-option,
+.isubdivide-homepage .assessment-option h3,
+.isubdivide-homepage .assessment-option p{
+  color:#ffffff !important;
+}
+.isubdivide-homepage .assessment-option .price,
+.isubdivide-homepage .assessment-option a{
+  color:var(--lime) !important;
+}
+
+@media(max-width:760px){
+  .isubdivide-homepage .hero h1{
+    font-size:clamp(2.8rem,13vw,4.15rem) !important;
+  }
+  .isubdivide-homepage .hero-options-row{
+    grid-template-columns:1fr !important;
+  }
+  .isubdivide-homepage .hero-options-button{
+    width:100% !important;
+  }
+  .isubdivide-homepage .logo-group{
+    gap:34px !important;
+    padding:0 24px !important;
+  }
+  .isubdivide-homepage .logo-group img{
+    max-width:105px !important;
+    height:38px !important;
+  }
+}
+</style>
+
 </head>
 
 <body>
@@ -1383,8 +1568,25 @@ body > main{
 
         <div class="button-row">
           <a class="btn btn-primary" href="https://isubdivide.com.au/site-assessment/">Start a Site Assessment</a>
-          <a class="btn btn-dark" href="#pathways">Show Me My Options</a>
           <a class="btn btn-quiet" href="tel:1300901851">Book a Free Consultation</a>
+        </div>
+
+        <div class="hero-options-panel">
+          <label for="propertyOption">What would you like to explore?</label>
+          <div class="hero-options-row">
+            <div class="hero-select-wrap">
+              <select id="propertyOption" aria-label="Choose a property development option">
+                <option value="">Choose an option</option>
+                <option value="assessment">Assess a property</option>
+                <option value="backyard">Build in my backyard</option>
+                <option value="granny-flat">Add a granny flat</option>
+                <option value="dual-occupancy">Create dual occupancy</option>
+                <option value="townhouses">Develop townhouses</option>
+                <option value="larger-development">Discuss a larger development</option>
+              </select>
+            </div>
+            <button class="hero-options-button" type="button" id="showOptionsButton">Show Me My Options</button>
+          </div>
         </div>
       </div>
 
@@ -1416,22 +1618,25 @@ body > main{
   </section>
 
   <section class="logo-marquee" aria-label="Featured in and industry associations">
-    <div class="logo-marquee-label">As featured in and connected across property</div>
+    <div class="logo-marquee-label">Featured in and connected across property</div>
     <div class="logo-marquee-window">
       <div class="logo-marquee-track">
-        <div class="marquee-logo"><img src="https://isubdivide.com.au/wp-content/uploads/2025/04/1-3.png" alt="Featured property brand"></div>
-        <div class="marquee-logo"><img src="https://isubdivide.com.au/wp-content/uploads/2025/04/2-3.png" alt="Featured property brand"></div>
-        <div class="marquee-logo"><img src="https://isubdivide.com.au/wp-content/uploads/2025/04/3-3.png" alt="Featured property brand"></div>
-        <div class="marquee-logo"><img src="https://isubdivide.com.au/wp-content/uploads/2025/05/realestate-1.png" alt="realestate.com.au"></div>
-        <div class="marquee-logo"><img src="https://isubdivide.com.au/wp-content/uploads/2025/05/IMG_1604-2-2-1-e1748562724214.png" alt="Featured media logo"></div>
-        <div class="marquee-logo"><img src="https://isubdivide.com.au/wp-content/uploads/2025/05/503-5033718_featured-in-sydney-morning-herald-transparent-logo-hd-removebg-preview.png" alt="Sydney Morning Herald"></div>
-
-        <div class="marquee-logo" aria-hidden="true"><img src="https://isubdivide.com.au/wp-content/uploads/2025/04/1-3.png" alt=""></div>
-        <div class="marquee-logo" aria-hidden="true"><img src="https://isubdivide.com.au/wp-content/uploads/2025/04/2-3.png" alt=""></div>
-        <div class="marquee-logo" aria-hidden="true"><img src="https://isubdivide.com.au/wp-content/uploads/2025/04/3-3.png" alt=""></div>
-        <div class="marquee-logo" aria-hidden="true"><img src="https://isubdivide.com.au/wp-content/uploads/2025/05/realestate-1.png" alt=""></div>
-        <div class="marquee-logo" aria-hidden="true"><img src="https://isubdivide.com.au/wp-content/uploads/2025/05/IMG_1604-2-2-1-e1748562724214.png" alt=""></div>
-        <div class="marquee-logo" aria-hidden="true"><img src="https://isubdivide.com.au/wp-content/uploads/2025/05/503-5033718_featured-in-sydney-morning-herald-transparent-logo-hd-removebg-preview.png" alt=""></div>
+        <div class="logo-group">
+          <img src="https://isubdivide.com.au/wp-content/uploads/2025/04/1-3.png" alt="Featured property brand">
+          <img src="https://isubdivide.com.au/wp-content/uploads/2025/04/2-3.png" alt="Featured property brand">
+          <img src="https://isubdivide.com.au/wp-content/uploads/2025/04/3-3.png" alt="Featured property brand">
+          <img src="https://isubdivide.com.au/wp-content/uploads/2025/05/realestate-1.png" alt="realestate.com.au">
+          <img src="https://isubdivide.com.au/wp-content/uploads/2025/05/IMG_1604-2-2-1-e1748562724214.png" alt="Featured media logo">
+          <img src="https://isubdivide.com.au/wp-content/uploads/2025/05/503-5033718_featured-in-sydney-morning-herald-transparent-logo-hd-removebg-preview.png" alt="Sydney Morning Herald">
+        </div>
+        <div class="logo-group" aria-hidden="true">
+          <img src="https://isubdivide.com.au/wp-content/uploads/2025/04/1-3.png" alt="">
+          <img src="https://isubdivide.com.au/wp-content/uploads/2025/04/2-3.png" alt="">
+          <img src="https://isubdivide.com.au/wp-content/uploads/2025/04/3-3.png" alt="">
+          <img src="https://isubdivide.com.au/wp-content/uploads/2025/05/realestate-1.png" alt="">
+          <img src="https://isubdivide.com.au/wp-content/uploads/2025/05/IMG_1604-2-2-1-e1748562724214.png" alt="">
+          <img src="https://isubdivide.com.au/wp-content/uploads/2025/05/503-5033718_featured-in-sydney-morning-herald-transparent-logo-hd-removebg-preview.png" alt="">
+        </div>
       </div>
     </div>
   </section>
@@ -1772,6 +1977,44 @@ body > main{
 
   /* Never allow the overlay to remain stuck. */
   window.setTimeout(hideLoader, 3500);
+})();
+</script>
+
+
+<script>
+(function(){
+  var button = document.getElementById("showOptionsButton");
+  var select = document.getElementById("propertyOption");
+
+  if (!button || !select) return;
+
+  var routes = {
+    "assessment": "https://isubdivide.com.au/site-assessment/",
+    "backyard": "#pathways",
+    "granny-flat": "https://isubdivide.com.au/granny-flat/",
+    "dual-occupancy": "#pathways",
+    "townhouses": "#pathways",
+    "larger-development": "tel:1300901851"
+  };
+
+  button.addEventListener("click", function(){
+    var value = select.value;
+
+    if (!value) {
+      select.focus();
+      select.style.borderColor = "#204f86";
+      return;
+    }
+
+    var route = routes[value];
+
+    if (route && route.charAt(0) === "#") {
+      document.querySelector(route)?.scrollIntoView({behavior:"smooth", block:"start"});
+      return;
+    }
+
+    if (route) window.location.href = route;
+  });
 })();
 </script>
 
